@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+body{
+  font-size: 100%;
+}
+li{
+  list-style: none;
+}
+img{
+  display: block;
+}
+
+.home{
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+/* タイトル */
+.ultimate{
+  width: 50%;
+  margin: 0 auto;
+}
+.kyukyoku{
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* コースボタン並び */
+.course_area{
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  padding: 0;
+}
+
+/* コースボタン */ 
+.course_btn{
+  width: 40%;
+  margin: 20px 20px;
+  background:transparent;
+  border-width:3px;
+  border-style: solid;
+  border-color: #454545;
+  transition:all 0.3s ease-in-out;
+  text-align:center;
+}
+.course_btn a{
+  position:relative;
+  display: block;
+  padding: 30px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #454545;
+  cursor: pointer;
+}
+/* アニメーション */
+.course_btn a:before, .course_btn a:after {
+  content:'';
+  display:block;
+  position:absolute;
+  border-color:#454545;
+  box-sizing:border-box;
+  border-style:solid;
+  width:2rem;
+  height:2rem;
+  transition:all 0.3s ease-in-out
+}
+.course_btn a:before {
+  top:-8px;
+  left:-8px;
+  border-width:3px 0 0 3px;
+}
+.course_btn a:after {
+  bottom:-8px;
+  right:-8px;
+  border-width:0 3px 3px 0;
+}
+.course_btn a:hover::before, .course_btn a:hover::after {
+  width:calc(100% + 15px);
+  height:calc(100% + 15px);
+  border-color:#454545
+}
+.course_btn a:hover {
+  background-color:#454545;
+  border-color:#454545
+}
+.course_btn a:hover {
+  color:#fff;
+}
+/* フォント */
+.wf-sawarabimincho {
+  font-family: "Sawarabi Mincho"; 
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 820px) {
+  .home{
+    margin: 20px auto 0 auto;
+  }
+  .course_area{
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .course_btn{
+    width: 60%;
+    margin: 10px 30px;
+  }
+  .course_btn a{
+    padding: 20px;
+  }
+  
+}

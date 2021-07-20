@@ -1,0 +1,200 @@
+@charset "UTF-8";
+
+body{
+  font-size: 100%;
+}
+a{
+  text-decoration: none;
+}
+
+.quiz_area{
+  width: 80%;
+  max-width: 800px;
+  margin: 100px auto;
+  font-size: 0.8rem;
+}
+
+.quiz_set p{
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+.quiz_no{
+  font-weight: bold;
+}
+
+/* 問題文 */
+.quiz_question{
+  font-size: 1rem;
+  font-weight: bold;
+  text-shadow: 1px 0 5px #000;
+  margin: 0 auto;
+  text-align: center;
+  padding: 50px;
+  border-radius: 20px;
+  background: linear-gradient(70deg,#00cc66,#00cccc);
+  color: #FFF;
+}
+
+/* 回答エリア */
+.quiz_answer{
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+/* 回答ボタン */
+.btn{
+  font-weight: bold;
+  color: #555;
+  width: 49%;
+  margin-top: 15px;
+  padding: 20px;
+  border: none;
+  border-radius: 30px;
+  background-color: #99ffff;
+  box-shadow: 0px 5px #66cccc;
+  cursor: pointer;
+}
+.btn:active{
+  position: relative;
+  top: 5px;
+  box-shadow: none;
+}
+
+/* やり直し、コース選択 */
+.quiz_back{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 100px 0 0 auto;
+  width: 22%;
+}
+.quiz_restart,.quiz_course{
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #000;
+  padding: 0;
+  margin-top: 20px;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0px 5px #000;
+  cursor: pointer;
+}
+.quiz_restart{
+  padding: 10px;
+}
+.quiz_course a{
+  display: block;
+  color: #000;
+  padding: 10px;
+}
+.quiz_restart:active,.quiz_course:active{
+  position: relative;
+  top: 5px;
+  box-shadow: none;
+}
+.fa-undo-alt, .fa-arrow-circle-left{
+  margin: 5px;
+}
+
+/* 正誤判定背景 */
+.quiz_bg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+  color: #FFF;
+  text-align: center;
+}
+
+/* 画面に〇、×を表示するための要素（デフォルト非表示、回答後に一時的に表示） */
+.quiz_result{
+  position: absolute;
+  box-sizing: border-box;
+  top: 30%;
+  left: 50%;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  color: red;
+  display: none;
+  font-size: 10em;
+  font-weight: bold;
+  -webkit-text-stroke: 4px #FFF;
+}
+
+/* .trueまたは.falseのクラスが付与されたら表示するものとみなす */
+.true, .false{
+  display: block;
+}
+
+/* .trueは正解（〇を表示） */
+.true:before{
+  content: '〇';
+  color: red;
+}
+/* .falseは不正解（×を表示） */
+.false:before{
+  content: '×';
+  color: blue;
+}
+
+/* 成績画面 */
+.quiz_record{
+  box-sizing: border-box;
+  padding: 40px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #FFF;
+  background: linear-gradient(70deg,#663399 ,#ff0000);
+  border-radius: 40px;
+  /* 最初は非表示 */
+  display: none;
+  text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+  .quiz_area{
+    margin: 50px auto;
+  }
+  /* 問題文 */
+  .quiz_question{
+    padding: 30px 5vw;
+  }
+
+  /* 回答ボタン */
+  .quiz_answer{
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn{
+    width: 95%;
+    margin: 8px 0;
+  }
+
+  /* やり直し、コース選択 */
+  .quiz_back{
+    width: 150px;
+    margin: 50px 0 0 auto;
+  }
+  .quiz_restart,.quiz_course{
+    font-size: 1vw;
+  }
+
+  /* 成績画面 */
+  .quiz_record{
+    font-size: 1.5em;
+    margin-top: 150px;
+  }
+  .quiz_record .quiz_restart,
+  .quiz_record .quiz_course{
+    width: 180px;
+  }
+  
+}
