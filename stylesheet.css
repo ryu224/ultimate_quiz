@@ -74,12 +74,13 @@ a{
 .quiz_restart,.quiz_course{
   font-size: 0.85rem;
   font-weight: bold;
-  color: #000;
+  color: #fff;
+  background-color: #555;
   padding: 0;
   margin-top: 20px;
   border: none;
   border-radius: 30px;
-  box-shadow: 0px 5px #000;
+  box-shadow: 0px 5px #222;
   cursor: pointer;
 }
 .quiz_restart{
@@ -87,7 +88,7 @@ a{
 }
 .quiz_course a{
   display: block;
-  color: #000;
+  color: #fff;
   padding: 10px;
 }
 .quiz_restart:active,.quiz_course:active{
@@ -118,13 +119,13 @@ a{
 .quiz_result{
   position: absolute;
   box-sizing: border-box;
-  top: 30%;
+  top: 40%;
   left: 50%;
   z-index: 100;
   transform: translate(-50%, -50%);
   color: red;
   display: none;
-  font-size: 10em;
+  font-size: 15em;
   font-weight: bold;
   -webkit-text-stroke: 4px #FFF;
 }
@@ -147,7 +148,9 @@ a{
 
 /* 成績画面 */
 .quiz_record{
+  max-width: 600px;
   box-sizing: border-box;
+  margin: 0 auto;
   padding: 40px;
   font-size: 2rem;
   font-weight: bold;
@@ -157,6 +160,13 @@ a{
   /* 最初は非表示 */
   display: none;
   text-align: center;
+}
+.quiz_record .quiz_restart, .quiz_record .quiz_course{
+  background-color: #fff;
+  color: #000;
+}
+.quiz_record .quiz_course a{
+  color: #000;
 }
 
 @media screen and (max-width: 900px) {
@@ -184,7 +194,7 @@ a{
     margin: 50px 0 0 auto;
   }
   .quiz_restart,.quiz_course{
-    font-size: 1vw;
+    font-size: 2.5vw;
   }
 
   /* 成績画面 */
